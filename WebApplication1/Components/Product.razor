@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Components.Web;
+@using WebApplication1.Models;
+@using WebApplication1.Services;
+@inject StudentDetailsService StudentService;
+
+
+
+@code {
+    string Name;
+    Student student;
+
+    void SelectProduct(string name)
+    {
+        this.Name = name;
+        student = StudentService.GetDetailsOfStudent(name);
+    }
+
+}
+
+<div class="card-group" style="padding-top:50px;">
+    @foreach (var student in StudentService.GetStudents())
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-text">@student.Name</h5>
+            </div>
+        </div>
+    }
+</div>

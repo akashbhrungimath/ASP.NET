@@ -1,0 +1,26 @@
+﻿@page
+@using WebApplication1.Components;
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">This website is created by Akash Bhrungimath</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>Names of the students</h2>
+        <input type="text" asp-action="details" asp-for="name" />
+        <button type="submit" class="btn-primary" asp-controller="../Controller/Details">Search</button>
+    </div>
+    <div>
+        @Html.DisplayFor(Model => Model.Students)
+    </div>
+</div>
+
+@(await Html.RenderComponentAsync<Product>(RenderMode.ServerPrerendered))
+
+<script src="_framework/blazor.server.js"></script>

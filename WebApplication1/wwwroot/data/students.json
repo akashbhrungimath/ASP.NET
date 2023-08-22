@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "Shivakumar",
+    "USN": "1BM20EE402",
+    "Cgpa": "9.5",
+    "fee_Status": "Paid",
+    "Gender": "Male",
+    "Back_logs": "0"
+  },
+  {
+    "Name": "Teggin Darshan Nagappa",
+    "USN": "1BM19EE046",
+    "Cgpa": "9.9",
+    "fee_Status": "Paid",
+    "Gender": "Male",
+    "Back_logs": "2"
+  },
+  {
+    "Name": "Sambram B N",
+    "USN": "1BM19EE019",
+    "Cgpa": "8.9",
+    "fee_Status": "Paid",
+    "Gender": "Male",
+    "Back_logs": "1"
+  },
+  {
+    "Name": "Akhilesh",
+    "USN": "1BM20EE401",
+    "Cgpa": "9.3",
+    "fee_Status": "Not Paid",
+    "Gender": "Male",
+    "Back_logs": "0"
+  },
+  {
+    "Name": "G L Pavankumar",
+    "USN": "1BM20EE400",
+    "Cgpa": "8.7",
+    "fee_Status": "Paid",
+    "Gender": "Male",
+    "Back_logs": "0"
+  }
+]
