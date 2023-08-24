@@ -24,11 +24,10 @@ namespace WebApplication1.Controller
         }
 
         [Route("getdetails")]
-        [HttpPost]
-        public ActionResult GetDetails([FromQuery] string name)
+        [HttpGet]
+        public Student GetDetails([FromQuery] string name)
         {
-            StudentService.GetDetailsOfStudent(name);
-            return Ok();
+            return StudentService.GetDetailsOfStudent(name);
         }
     }
 }

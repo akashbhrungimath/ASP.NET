@@ -30,6 +30,7 @@ app.MapRazorPages();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
+    endpoints.MapRazorPages();
     endpoints.MapBlazorHub();
 });
 app.Run();

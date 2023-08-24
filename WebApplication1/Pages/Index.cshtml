@@ -6,20 +6,19 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">This website is created by Akash Bhrungimath</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">This website is created by Akash</h1>
 </div>
 
-<div class="card">
-    <div class="card-header">
-        <h2>Names of the students</h2>
-        <input type="text" asp-action="details" asp-for="name" />
-        <button type="submit" class="btn-primary" asp-controller="../Controller/Details">Search</button>
-    </div>
+@*<div class="card">
+    <ul>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="DetailsController" asp-action="Index">All Student Details</a>
+        </li>
+    </ul>
     <div>
         @Html.DisplayFor(Model => Model.Students)
     </div>
-</div>
+</div>*@
 
 @(await Html.RenderComponentAsync<Product>(RenderMode.ServerPrerendered))
 

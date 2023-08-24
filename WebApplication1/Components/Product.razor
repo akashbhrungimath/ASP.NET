@@ -6,24 +6,66 @@
 
 
 @code {
-    string Name;
-    Student student;
+    string NameSelected;
+    Student studentSelected;
 
-    void SelectProduct(string name)
+    void SelectStudent(string name)
     {
-        this.Name = name;
-        student = StudentService.GetDetailsOfStudent(name);
+        this.NameSelected = name;
+        studentSelected = StudentService.GetDetailsOfStudent(name);
     }
 
 }
 
-<div class="card-group" style="padding-top:50px;">
-    @foreach (var student in StudentService.GetStudents())
-    {
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-text">@student.Name</h5>
+<div>
+    <div class="card">
+        <div class="card-header">
+            <h2>Names of the students</h2>
+            @*<input type="text" asp-action="details" asp-for="name" />*@
+        </div>
+    </div>
+
+    <div class="card-group" style="padding-top:50px;">
+        @foreach (var student in StudentService.GetStudents())
+        {
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-text">@student.Name</h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productModal" 
+                        @onclick="(x => SelectStudent(student.Name))">
+                            more info
+                        </button>
+                    </small>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@if(studentSelected != null)
+{
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalTitle">@studentSelected.Name</h5>
+                    <button class="btn-close" type="button" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>@studentSelected.Usn</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
             </div>
         </div>
-    }
-</div>
+    </div>
+}
